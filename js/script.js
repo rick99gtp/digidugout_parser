@@ -1,11 +1,12 @@
-let btnFile = document.querySelector('input[type=file]');
+let btnFile = document.querySelector('.myfile');
+
 let fileSelected = '';
 
 let myObj = {};
 let newData;
 let xmlhttp = new XMLHttpRequest();
 
-setMyObj();
+setMyObj(); // used for EVENT LOGS
 
 function setMyObj() {
 
@@ -190,8 +191,8 @@ btnFile.addEventListener('change', () => {
     fileSelected = btnFile.value;
     fileSelected = fileSelected.replace(/.*[\/\\]/, '');
 
-    gamefile = "../files to parse/" + fileSelected;
+    let gamefile = "../files to parse/" + fileSelected;
 
     xmlhttp.open("GET", gamefile, true);
     xmlhttp.send();
-})
+});
